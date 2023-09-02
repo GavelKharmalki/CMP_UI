@@ -1,9 +1,6 @@
-import 'package:craftmyplateui/screen/homescreen/homescreen.dart';
-import 'package:craftmyplateui/screen/temp.sh.dart';
-import 'package:craftmyplateui/splashscreen3.dart';
+import 'package:craftmyplateui/screen/splashscreen2.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-
 import 'firebase_options.dart';
 
 Future main() async {
@@ -24,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SplashScreen3(),
+      home: SplashScreen2(),
     );
   }
 }

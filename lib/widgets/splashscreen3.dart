@@ -1,12 +1,11 @@
-import 'package:craftmyplateui/screen/homescreen/homescreen.dart';
 import 'package:craftmyplateui/screen/onboarding_screen.dart';
-import 'package:craftmyplateui/widgets/leftshape.dart';
 import 'package:craftmyplateui/widgets/rightshape.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-import 'constants/apptheme.dart';
+import '../../constants/apptheme.dart';
+import '../screen/homescreen.dart';
+import 'leftshape.dart';
 
 class SplashScreen3 extends StatefulWidget {
   const SplashScreen3({Key? key}) : super(key: key);

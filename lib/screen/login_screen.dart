@@ -1,10 +1,7 @@
 import 'package:craftmyplateui/helper/rescale.dart';
 import 'package:craftmyplateui/screen/otp_screen.dart';
-import 'package:craftmyplateui/screen/splashscreen2.dart';
-import 'package:craftmyplateui/screen/termsandaggreement.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -27,10 +24,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    //PASSING PHONE NO
-    //final FirebaseAuth _auth = FirebaseAuth.instance;
-
-    print((243 / 667) * 683);
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(

@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:craftmyplateui/screen/homescreen/homescreen.dart';
-import 'package:craftmyplateui/screen/splashscreen2.dart';
+import 'package:craftmyplateui/screen/homescreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

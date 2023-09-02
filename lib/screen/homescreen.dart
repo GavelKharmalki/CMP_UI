@@ -1,25 +1,21 @@
 import 'package:craftmyplateui/helper/rescale.dart';
-import 'package:craftmyplateui/screen/homescreen/carousel_item.dart';
-import 'package:craftmyplateui/screen/homescreen/categories_item.dart';
-import 'package:craftmyplateui/screen/homescreen/custom_card.dart';
-import 'package:craftmyplateui/screen/homescreen/plate.dart';
-import 'package:craftmyplateui/screen/homescreen/reusable_card.dart';
-import 'package:craftmyplateui/screen/homescreen/right_circle.dart';
-import 'package:craftmyplateui/screen/homescreen/services_card.dart';
-import 'package:craftmyplateui/screen/homescreen/starter_card.dart';
-import 'package:craftmyplateui/splashscreen3.dart';
+import 'package:craftmyplateui/widgets/carousel_item.dart';
+import 'package:craftmyplateui/widgets/categories_item.dart';
+import 'package:craftmyplateui/widgets/plate.dart';
+import 'package:craftmyplateui/widgets/reusable_card.dart';
+import 'package:craftmyplateui/widgets/right_circle.dart';
+import 'package:craftmyplateui/widgets/services_card.dart';
+import 'package:craftmyplateui/widgets/starter_card.dart';
+import 'package:craftmyplateui/widgets/splashscreen3.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
-import 'package:pinput/pinput.dart';
-import '../../location.dart';
-import '../../model/main_course_model.dart';
-import '../../model/service_card_model.dart';
-import '../login_screen.dart';
-import '../splashscreen2.dart';
-import 'left_circle.dart';
-import 'navbar.dart';
+import '../model/main_course_model.dart';
+import '../model/service_card_model.dart';
+import '../widgets/carousel_item.dart';
+import '../widgets/left_circle.dart';
+import '../widgets/navbar.dart';
+import '../widgets/splashscreen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -30,8 +26,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   late Future<String?> userName;
-  //late Future<String?> locationFuture;
-  String? location;
 
   Future<String?> userNameFirebase() async {
     User? currentUser = FirebaseAuth.instance.currentUser;
@@ -43,18 +37,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return null;
   }
 
-  // Future<String?> fetchUserLocation() async {
-  //   final locationService = LocationCity();
-  //   final userCity = await locationService.getUserCity();
-  //   setState(() {
-  //     location = userCity ?? 'Bangalore';
-  //   });
-  //   return location;
-  // }
-
   @override
   void initState() {
-    //locationFuture = fetchUserLocation();
     userName = userNameFirebase();
     // TODO: implement initState
     super.initState();
@@ -65,7 +49,6 @@ class _HomeScreenState extends State<HomeScreen> {
     double screenSize = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-        //backgroundColor: Colors.transparent,
         bottomNavigationBar:
             Container(height: rescale(context, 55), child: NavBar()),
         body: SingleChildScrollView(
@@ -130,20 +113,6 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: Color(0xFF7B7B7B),
                           ),
                         ),
-                        // FutureBuilder<String?>(
-                        //     future: locationFuture,
-                        //     builder: (context, snapshot) {
-                        //       if (snapshot.connectionState ==
-                        //           ConnectionState.waiting) {
-                        //         return const SizedBox(
-                        //             height: 10,
-                        //             width: 10,
-                        //             child: CircularProgressIndicator());
-                        //       } else if (snapshot.hasError) {
-                        //         return const Text('Error retrieving location');
-                        //       } else {
-                        //         final locationData = snapshot.data;
-                        //         return
                         Row(
                           children: [
                             Icon(
@@ -174,7 +143,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => SplashScreen3(),
+                                  builder: (context) => SplashScreen2(),
                                 ));
                           },
                           child: Icon(
@@ -262,45 +231,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: Color(0xFF6318AF),
                     ),
                   )),
-              //Container(
-              //   height: 100,
-              //   margin: const EdgeInsets.only(left: 20),
-              //   child: SingleChildScrollView(
-              //     scrollDirection: Axis.horizontal,
-              //     child: Row(
-              //       mainAxisAlignment: MainAxisAlignment.end,
-              //       children: [
-              //         SizedBox(
-              //           width:
-              //               120, // Set a specific width for the CustomCard widget
-              //           child: ReusableCard(
-              //             imageUrl:
-              //                 "assets/plate-food-with-different-dishes-including-chicken-rice-other-food 1.png",
-              //             text: "Grilled Chicken",
-              //           ),
-              //         ),
-              //         SizedBox(
-              //           width:
-              //               120, // Set a specific width for the CustomCard widget
-              //           child: ReusableCard(
-              //             imageUrl:
-              //                 "assets/plate-food-with-different-dishes-including-chicken-rice-other-food 1.png",
-              //             text: "Mashroom Fry",
-              //           ),
-              //         ),
-              //         SizedBox(
-              //           width:
-              //               120, // Set a specific width for the CustomCard widget
-              //           child: ReusableCard(
-              //             imageUrl:
-              //                 "assets/plate-food-with-different-dishes-including-chicken-rice-other-food 1.png",
-              //             text: "Mashroom Fry",
-              //           ),
-              //         ),
-              //       ],
-              //     ),
-              //   ),
-              // ),
+
               ///Start Crafting cards
               Container(
                 margin: const EdgeInsets.only(left: 20, right: 20),
@@ -412,44 +343,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
               ),
-              // Container(
-              //   margin: const EdgeInsets.only(left: 20),
-              //   child: SingleChildScrollView(
-              //     scrollDirection: Axis.horizontal,
-              //     child: Row(
-              //       mainAxisAlignment: MainAxisAlignment.end,
-              //       children: [
-              //         SizedBox(
-              //           width:
-              //               120, // Set a specific width for the CustomCard widget
-              //           child: CustomCard(
-              //             imageUrl:
-              //                 "assets/plate-food-with-different-dishes-including-chicken-rice-other-food 1.png",
-              //             text: "Grilled Chicken",
-              //           ),
-              //         ),
-              //         SizedBox(
-              //           width:
-              //               120, // Set a specific width for the CustomCard widget
-              //           child: CustomCard(
-              //             imageUrl:
-              //                 "assets/plate-food-with-different-dishes-including-chicken-rice-other-food 1.png",
-              //             text: "Mashroom Fry",
-              //           ),
-              //         ),
-              //         SizedBox(
-              //           width:
-              //               120, // Set a specific width for the CustomCard widget
-              //           child: CustomCard(
-              //             imageUrl:
-              //                 "assets/plate-food-with-different-dishes-including-chicken-rice-other-food 1.png",
-              //             text: "Mashroom Fry",
-              //           ),
-              //         ),
-              //       ],
-              //     ),
-              //   ),
-              // ),
+
               ///Main Course text
               Container(
                   margin: EdgeInsets.only(top: 10, left: 24, bottom: 5),
@@ -501,44 +395,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
               ),
-              // Container(
-              //   margin: const EdgeInsets.only(left: 20),
-              //   child: SingleChildScrollView(
-              //     scrollDirection: Axis.horizontal,
-              //     child: Row(
-              //       mainAxisAlignment: MainAxisAlignment.end,
-              //       children: [
-              //         SizedBox(
-              //           width:
-              //               120, // Set a specific width for the CustomCard widget
-              //           child: CustomCard(
-              //             imageUrl:
-              //                 "assets/plate-food-with-different-dishes-including-chicken-rice-other-food 1.png",
-              //             text: "Grilled Chicken",
-              //           ),
-              //         ),
-              //         SizedBox(
-              //           width:
-              //               120, // Set a specific width for the CustomCard widget
-              //           child: CustomCard(
-              //             imageUrl:
-              //                 "assets/plate-food-with-different-dishes-including-chicken-rice-other-food 1.png",
-              //             text: "Mashroom Fry",
-              //           ),
-              //         ),
-              //         SizedBox(
-              //           width:
-              //               120, // Set a specific width for the CustomCard widget
-              //           child: CustomCard(
-              //             imageUrl:
-              //                 "assets/plate-food-with-different-dishes-including-chicken-rice-other-food 1.png",
-              //             text: "Mashroom Fry",
-              //           ),
-              //         ),
-              //       ],
-              //     ),
-              //   ),
-              // ),
 
               ///Services Text
               Container(
@@ -687,7 +543,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     context,
                     MaterialPageRoute(
                       builder: (BuildContext context) {
-                        return SplashScreen3(); // Replace with the screen you want to navigate to
+                        return SplashScreen2(); // Replace with the screen you want to navigate to
                       },
                     ),
                   );

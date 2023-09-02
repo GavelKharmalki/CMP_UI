@@ -29,8 +29,8 @@ final List<ServiceItems> serviceItems = [
 
   ServiceItems(
     imageUrl: 'assets/0721ca0f425b50d3d8533225b10a2d16.jpg',
-    //iconImage: 'assets/a1c6ee70c31efebf77ad04823e692da6.png',
-    iconImage: 'assets/Green Badge 2.png',
+    iconImage: 'assets/a1c6ee70c31efebf77ad04823e692da6.png',
+    //iconImage: 'assets/Green Badge 2.png',
     iconText: 'Value',
     des1: 'Disposable Cutlery',
     des2: 'Basic Decorations & Table Settings',

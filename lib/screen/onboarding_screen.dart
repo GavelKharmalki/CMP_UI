@@ -1,11 +1,10 @@
-import 'package:craftmyplateui/screen/homescreen/homescreen.dart';
 import 'package:craftmyplateui/screen/login_screen.dart';
-import 'package:craftmyplateui/widgets/onboarding_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../helper/rescale.dart';
+import '../widgets/onboarding_page.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);

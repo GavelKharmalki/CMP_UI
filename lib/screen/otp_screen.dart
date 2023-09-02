@@ -28,29 +28,6 @@ class _OtpScreenState extends State<OtpScreen> {
   }
 
   final FirebaseAuth auth = FirebaseAuth.instance;
-  // Future<void> _verifyCode(BuildContext context) async {
-  //   try {
-  //     // Use the verificationId and the entered code to complete verification
-  //     PhoneAuthCredential credential = PhoneAuthProvider.credential(
-  //       verificationId: "123456",
-  //       smsCode: '123456', // Replace with the user's input
-  //     );
-  //
-  //     // Sign in the user with the credential
-  //     await FirebaseAuth.instance.signInWithCredential(credential);
-  //
-  //     // Navigate to the next screen or perform other actions
-  //     // For example, you can navigate back to the home page
-  //     Navigator.popUntil(context, (route) => route.isFirst);
-  //   } catch (e) {
-  //     // Handle verification failure or other errors
-  //     print('Error: $e');
-  //     // You can display an error message to the user
-  //     ScaffoldMessenger.of(context).showSnackBar(
-  //       SnackBar(content: Text('Verification failed')),
-  //     );
-  //   }
-  // }
 
   @override
   Widget build(BuildContext context) {

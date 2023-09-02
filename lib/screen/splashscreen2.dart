@@ -1,14 +1,12 @@
 import 'package:craftmyplateui/screen/onboarding_screen.dart';
-import 'package:craftmyplateui/screen/textanimation.screen.dart';
-import 'package:craftmyplateui/widgets/bigtext.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../constants/apptheme.dart';
+import '../widgets/bigtext.dart';
 import '../widgets/leftshape.dart';
 import '../widgets/rightshape.dart';
-import 'homescreen/homescreen.dart';
+import 'homescreen.dart';
 
 class SplashScreen2 extends StatefulWidget {
   @override
@@ -91,7 +89,7 @@ class _SplashScreen2State extends State<SplashScreen2>
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => HomeScreen(), // Replace with your home screen
+            builder: (context) => HomeScreen(),
           ),
         );
       } else {
@@ -99,8 +97,7 @@ class _SplashScreen2State extends State<SplashScreen2>
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) =>
-                OnboardingScreen(), // Replace with your onboarding screen
+            builder: (context) => OnboardingScreen(),
           ),
         );
       }

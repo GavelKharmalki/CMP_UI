@@ -1,14 +1,12 @@
 import 'package:craftmyplateui/screen/onboarding_screen.dart';
-import 'package:craftmyplateui/screen/textanimation.screen.dart';
-import 'package:craftmyplateui/widgets/bigtext.dart';
+import 'package:craftmyplateui/widgets/rightshape.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
-import '../constants/apptheme.dart';
-import '../widgets/leftshape.dart';
-import '../widgets/rightshape.dart';
-import 'homescreen/homescreen.dart';
+import '../../constants/apptheme.dart';
+import '../screen/homescreen.dart';
+import 'bigtext.dart';
+import 'leftshape.dart';
 
 class SplashScreen2 extends StatefulWidget {
   @override
